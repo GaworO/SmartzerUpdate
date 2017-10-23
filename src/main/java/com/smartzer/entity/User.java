@@ -13,9 +13,9 @@ public class User {
     private int age;
 
 
-
     public User() {
     }
+
     public User(String name, int age) {
         this.name = name;
         this.age = age;
@@ -45,14 +45,13 @@ public class User {
         this.age = age;
     }
 
-
-    public User setValues(String name , Integer age ) {
-        User user = new User() ;
+    //Method that is used to add a new user to the list and set name and age
+    public User setValues(String name, Integer age) {
+        User user = new User();
         user.setName(name);
         user.setAge(age);
-        return  user ;
+        return user;
     }
-
 
 
 }

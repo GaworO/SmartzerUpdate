@@ -15,27 +15,26 @@
 
 </form>-->
 <div class="buttons">
-<form class="form-inline" th:action="@{/user}" method="post" th:object="${user}">
-    <!--<label class="sr-only" for="inlineFormInput">Name</label>-->
-    <!--<input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="inlineFormInput" placeholder="Name" th:field="*{name}"/>-->
-    <br></br><br></br>
+    <form class="form-inline" th:action="@{/user}" method="post" th:object="${user}">
+        <br></br><br></br>
+        <!--Form to create a new user -->
+        <label class="sr-only" for="inlineFormInput">Name</label>
+        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+            <input type="text" class="form-control" id="inlineFormInput" placeholder="Name" th:field="*{name}"/>
+        </div>
 
-    <label class="sr-only" for="inlineFormInput">Name</label>
-    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-        <input type="text" class="form-control" id="inlineFormInput" placeholder="Name" th:field="*{name}"/>
-    </div>
-
-    <label class="sr-only" for="inlineFormInputGroup">Age</label>
-    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-        <div class="input-group-addon">Number</div>
-        <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Age" th:field="*{age}"/>
-    </div>
-    <button type="submit" class="btn btn-primary">Add</button>
-</form>
-<br> </br>
-<a th:href="@{/user}" class="btn btn-info" role="button">New User</a>
-<a th:href="@{/users}" class="btn btn-success" role="button">All users</a>
-<a th:href="@{/}" class="btn btn-warning" role="button">Home</a>
+        <label class="sr-only" for="inlineFormInputGroup">Age</label>
+        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+            <div class="input-group-addon">Number</div>
+            <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Age" th:field="*{age}"/>
+        </div>
+        <button type="submit" class="btn btn-primary">Add</button>
+    </form>
+    <br> </br>
+    <!--Main page with buttons that redirect to pages New User , All users and Home -->
+    <a th:href="@{/user}" class="btn btn-info" role="button">New User</a>
+    <a th:href="@{/users}" class="btn btn-success" role="button">All users</a>
+    <a th:href="@{/}" class="btn btn-warning" role="button">Home</a>
 </div>
 </body>
 </html>

@@ -4,6 +4,7 @@ import com.smartzer.entity.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -13,18 +14,18 @@ import java.util.Map;
 @RequestMapping("")
 public class UserController {
 
-    Map<String , Integer> users = new HashMap<>();
+    Map<String, Integer> users = new HashMap<>();
 
     @GetMapping("/users")
-    private String getUser(Model model , User user) {
-        List<User> users1 = new ArrayList<>() ;
-        String name  = "";
-        Integer age  = 0 ;
+    private String getUser(Model model, User user) {
+        List<User> users1 = new ArrayList<>();
+        String name = "";
+        Integer age = 0;
 
-        for ( Map.Entry<String, Integer> mapWithUsers : users.entrySet()) {
+        for (Map.Entry<String, Integer> mapWithUsers : users.entrySet()) {
             name = mapWithUsers.getKey();
             age = mapWithUsers.getValue();
-            users1.add(user.setValues(name , age));
+            users1.add(user.setValues(name, age));
         }
         model.addAttribute("users", users1);
         return "allUsers";
@@ -39,7 +40,7 @@ public class UserController {
 
     @PostMapping("/user")
     private String newUserPost(@ModelAttribute User user) {
-        users.put(user.getName() , user.getAge());
+        users.put(user.getName(), user.getAge());
         return "home";
 
     }

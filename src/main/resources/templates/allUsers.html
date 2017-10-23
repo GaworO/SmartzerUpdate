@@ -8,7 +8,6 @@
     <title>All Users</title>
 </head>
 <body>
-
 <table class="table table-bordered" id="myTable">
     <thead>
     <tr>
@@ -16,16 +15,18 @@
         <th>Age</th>
     </tr>
     </thead>
+    <!-- for each loop that takes name and age to show it in the view -->
     <tbody>
     <div th:each="users : ${users}">
         <tr>
-            <td  th:text="${users.name}"></td>
-            <td  th:text="${users.age}"></td>
+            <td th:text="${users.name}"></td>
+            <td th:text="${users.age}"></td>
         </tr>
     </div>
-      </tbody>
+    </tbody>
 </table>
-<a id="sort" th:href="@{#}"  class="btn btn-danger" role="button">Sort By Name</a>
+<!--Links with available redirection to Sort By Name , New user and Home -->
+<a id="sort" th:href="@{#}" class="btn btn-danger" role="button">Sort By Name</a>
 <a th:href="@{/user}" class="btn btn-info" role="button">New User</a>
 <a th:href="@{/}" class="btn btn-warning" role="button">Home</a>
 
