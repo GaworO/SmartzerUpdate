@@ -20,3 +20,7 @@ In resources there are 2 folders.
 
 1) static.js - in the folders js is available .js file with sorting method  sort.addEventListener("click", function (event) , in css are all the css changes. There is also a bootsrtap folder for all css , js and bootstrap files. 
 2) templates - here are the views 
+
+
+The file can be run threw commend in cmd : mvnw spring-boot:run it will be than avaliable in localhost:8080. 
+Also you can run it by importing the file to ide like : Eclipse or Intelijay if maven is already on your system and run it from there.
