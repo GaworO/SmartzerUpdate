@@ -5,15 +5,11 @@
     <title>New user</title>
     <link th:href="@{/js/css/allUsers.css}" rel="stylesheet"/>
     <link rel="stylesheet" th:href="@{/js/bootstrap/css/bootstrap.min.css}"/>
+    <script th:attr="src=@{https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js}"></script>
+     <script th:attr="src=@{/js/js/allUsers.js}"></script>
 </head>
 <body>
-<!--<form th:action="@{/user}" method="post" th:object="${user}">
-    <input type="text" placeholder="name" class="form-control" id="name" th:field="*{name}"/>
-    <input type="text" placeholder="age" class="form-control" id="age" th:field="*{age}"/>
-    <input type="submit" class="btn btn-block btn-lg btn-primary" value="Add"/>
 
-
-</form>-->
 <div class="buttons">
     <form class="form-inline" th:action="@{/user}" method="post" th:object="${user}">
         <br></br><br></br>
@@ -34,7 +30,7 @@
     <!--Main page with buttons that redirect to pages New User , All users and Home -->
     <a th:href="@{/user}" class="btn btn-info" role="button">New User</a>
     <a th:href="@{/users}" class="btn btn-success" role="button">All users</a>
-    <a th:href="@{/}" class="btn btn-warning" role="button">Home</a>
+
 </div>
 </body>
 </html>

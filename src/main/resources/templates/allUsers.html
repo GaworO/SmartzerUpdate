@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
 <head>
-    <script th:attr="src=@{https://ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.js}"></script>
     <script th:attr="src=@{/js/js/allUsers.js}"></script>
+    <script th:attr="src=@{https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js}"></script>
+    <script th:attr="src=@{https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.29.0/css/dragtable.mod.min.css}"></script>
     <link rel="stylesheet" th:href="@{/js/bootstrap/css/bootstrap.min.css}"/>
     <meta charset="UTF-8"/>
     <title>All Users</title>
 </head>
 <body>
-<table class="table table-bordered" id="myTable">
+<table id="myTable" class="table table-bordered">
     <thead>
     <tr>
         <th>First Name</th>
@@ -18,17 +19,23 @@
     <!-- for each loop that takes name and age to show it in the view -->
     <tbody>
     <div th:each="users : ${users}">
-        <tr>
-            <td th:text="${users.name}"></td>
+        <tr class="remove">
+            <td  th:text="${users.name}"></td>
             <td th:text="${users.age}"></td>
         </tr>
     </div>
     </tbody>
 </table>
-<!--Links with available redirection to Sort By Name , New user and Home -->
-<a id="sort" th:href="@{#}" class="btn btn-danger" role="button">Sort By Name</a>
+<!--Links with available redirection to Sort By Name , Age , create New user -->
+<a id="sortAscName"  data-toggle="tooltip" title="Click me and sort name in asending order" class="btn btn-warning" role="button">Name  Asc</a>
+<a id="sortDscName"  data-toggle="tooltip" title="Click me and sort name in descending order" class="btn btn-danger"  role="button">Name Dsc</a>
+
+<a id="sortAscAge"  data-toggle="tooltip" title="Click me and sort age in asending order" class="btn btn-primary" role="button">Age  Asc</a>
+<a id="sortDscAge"  data-toggle="tooltip" title="Click me and sort age in descending order" class="btn btn-secondary" role="button">Age Dsc</a><br></br><br></br><br></br>
+
+
 <a th:href="@{/user}" class="btn btn-info" role="button">New User</a>
-<a th:href="@{/}" class="btn btn-warning" role="button">Home</a>
+
 
 </body>
 </html>

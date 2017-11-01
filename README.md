@@ -1,11 +1,12 @@
 # Smartzer_Update
-This aplication is build with Java and JavaScript on SpringBoot , ThymeLeaf with usage of Bootstrap.
+This aplication is build with Java and JavaScript , jQuery , SpringBoot and ThymeLeaf with usage of Bootstrap.
 
 
 What can be found in the app ? 
 
 Controllers : 
 1) UserController - In this controller database is beeing created as a Map with Key - Name and Value - Age. It can be accessed at address   @GetMapping("/user"). In this controller there is also an action of redirecting all of the added users to the view. It can be accessed at address  @GetMapping("/users").
+After addition of a new user you will be redirected to the webside with all the users. There is no possibility to add a user that already exists with the same name in the database , there can only be users with unique key name values. It is possible to sort columns by name and age in ascending and descending order after making a click on a button. Sort is made with help of jQuery and function sort(). 
 2) HomeController - which redirects to the home page (@RequestMapping("/")
 
 Entity : 
